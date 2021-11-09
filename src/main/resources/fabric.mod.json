@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "ifoundnetherite",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "IFoundNetherite",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "",
+    "sources": "https://github.com/ldslds449/IFoundNetherite"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/ifoundnetherite/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.fabricmc.ifoundnetherite.Main"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "ifoundnetherite.mixins.json"
   ],
 
   "depends": {
