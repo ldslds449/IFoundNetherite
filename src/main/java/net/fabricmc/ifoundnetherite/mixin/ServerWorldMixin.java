@@ -33,6 +33,12 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(ServerWorld.class)
 public abstract class ServerWorldMixin extends World implements StructureWorldAccess{
 
+	protected ServerWorldMixin(MutableWorldProperties properties, RegistryKey<World> registryRef,
+			DimensionType dimensionType, Supplier<Profiler> profiler, boolean isClient, boolean debugWorld, long seed) {
+		super(properties, registryRef, dimensionType, profiler, isClient, debugWorld, seed);
+		// Do nothing
+	}
+
 	@Shadow
 	public abstract boolean addEntity(Entity entity);
 
