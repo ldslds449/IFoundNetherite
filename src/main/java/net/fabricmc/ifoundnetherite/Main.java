@@ -1,6 +1,7 @@
 package net.fabricmc.ifoundnetherite;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.registry.Registry;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,5 +21,7 @@ public class Main implements ModInitializer {
 
 		Config IFN_config = new Config();
 		IFN_config.load_config();
+
+		Registry.register(Registry.SOUND_EVENT, CustomSound.POE_SOUND_ID, CustomSound.POE_SOUND_EVENT);
 	}
 }

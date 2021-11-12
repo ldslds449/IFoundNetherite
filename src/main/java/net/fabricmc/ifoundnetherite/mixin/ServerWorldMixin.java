@@ -1,6 +1,7 @@
 package net.fabricmc.ifoundnetherite.mixin;
 
 import net.fabricmc.ifoundnetherite.Config;
+import net.fabricmc.ifoundnetherite.CustomSound;
 import net.fabricmc.ifoundnetherite.Main;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
@@ -36,7 +37,9 @@ public abstract class ServerWorldMixin extends World implements StructureWorldAc
 			Main.LOGGER.info("[Detect Spawn Entity] --- {} x {}", item.getStack().getItem().getTranslationKey(),
 					item.getStack().getCount());
 			if (Config.in_config(item.getStack().getItem().getTranslationKey())) {
-				this.playSound(null, entity.getBlockPos(), SoundEvents.BLOCK_BELL_USE, SoundCategory.BLOCKS, 1f, 1f);
+				// this.playSound(null, entity.getBlockPos(), SoundEvents.BLOCK_BELL_USE,
+				// SoundCategory.BLOCKS, 1f, 1f);
+				this.playSound(null, entity.getBlockPos(), CustomSound.POE_SOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f);
 			}
 		}
 		return this.addEntity(entity);
