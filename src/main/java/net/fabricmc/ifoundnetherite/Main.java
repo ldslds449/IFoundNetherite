@@ -17,5 +17,8 @@ public class Main implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		LOGGER.info("Hello Fabric world!");
+
+		Config IFN_config = new Config();
+		IFN_config.load_config();
 	}
 }
