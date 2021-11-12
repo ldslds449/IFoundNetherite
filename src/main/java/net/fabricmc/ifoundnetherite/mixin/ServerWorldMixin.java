@@ -36,9 +36,10 @@ public abstract class ServerWorldMixin extends World implements StructureWorldAc
 			ItemEntity item = (ItemEntity) entity;
 			Main.LOGGER.info("[Detect Spawn Entity] --- {} x {}", item.getStack().getItem().getTranslationKey(),
 					item.getStack().getCount());
-			if (Config.in_config(item.getStack().getItem().getTranslationKey())) {
-				// this.playSound(null, entity.getBlockPos(), SoundEvents.BLOCK_BELL_USE,
-				// SoundCategory.BLOCKS, 1f, 1f);
+			String temp = item.getStack().getItem().getTranslationKey();
+			temp = temp.replaceAll("[a-z]+.minecraft.", "");
+			// Main.LOGGER.info(temp.replaceAll("[a-z]+.minecraft.", ""));
+			if (Config.in_config(temp)) {
 				this.playSound(null, entity.getBlockPos(), CustomSound.POE_SOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f);
 			}
 		}

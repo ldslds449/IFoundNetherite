@@ -19,7 +19,7 @@ public class Config {
         try {
             if (configFile.createNewFile()) {
                 FileWriter writer = new FileWriter(configFile);
-                config_map.put("item.minecraft.diamond", "0");
+                config_init();
                 writer.append(gson.toJson(config_map));
                 writer.close();
             } else {
@@ -45,5 +45,19 @@ public class Config {
 
     public static boolean in_config(String item_id) {
         return config_map.containsKey(item_id);
+    }
+
+    private static void config_init() {
+        config_map.put("diamond", "0");
+        config_map.put("ghast_tear", "0");
+        config_map.put("ancient_debris", "0");
+        config_map.put("netherite_ingot", "0");
+        config_map.put("netherite_scrap", "0");
+        config_map.put("heart_of_the_sea", "0");
+        config_map.put("trident", "0");
+        config_map.put("shulker_shell", "0");
+        config_map.put("nether_star", "0");
+        config_map.put("elytra", "0");
+        config_map.put("enchanted_book", "0");
     }
 }
