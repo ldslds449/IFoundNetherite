@@ -8,6 +8,9 @@
   "client": [
     "ServerWorldMixin"
   ],
+  "server": [
+    "ServerWorldMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }
